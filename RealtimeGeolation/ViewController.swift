@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import MapKit
+import Firebase
+import FirebaseDatabase
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController,CLLocationManagerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let ref = FIRDatabase.database().reference()
+        ref.removeAllObservers()
     }
 
     override func didReceiveMemoryWarning() {
